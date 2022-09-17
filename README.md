@@ -12,6 +12,6 @@ The second task begins to update the display. It begins by reading out the curre
 initializes the oled display and displays the value. After that the task enters a blocked state via vTaskDelay,
 and the cycle repeats ones again with the first task.
 
-![Screenshot]:(https://github.com/Dekameron55/ESP32_adc_sampling/blob/main/Picture1.png)
+![Screenshot](https://github.com/Dekameron55/ESP32_adc_sampling/blob/main/Picture1.png)
 
 The example was ran on the wokwi simulator website.

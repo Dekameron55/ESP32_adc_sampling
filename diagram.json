@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -261.86, "left": -342.95, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled1", "top": -63.91, "left": -239.21, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": -273.35,
+      "left": -147.61,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -403.77,
+      "left": -111.79,
+      "attrs": { "color": "red", "flip": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "oled1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "esp:D21", "oled1:SDA", "green", [ "h0" ] ],
+    [ "esp:D22", "oled1:SCL", "green", [ "h0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:3V3", "pot1:VCC", "green", [ "v0.71", "h79.67", "v-123.04" ] ],
+    [ "pot1:SIG", "esp:D34", "green", [ "h-54.68", "v-105.34", "h-165.77", "v100.06" ] ],
+    [ "led1:C", "pot1:GND", "green", [ "v28.06", "h133.72" ] ],
+    [ "led1:A", "pot1:VCC", "green", [ "v92.9", "h-49.34", "v42.36" ] ]
+  ]
+}
